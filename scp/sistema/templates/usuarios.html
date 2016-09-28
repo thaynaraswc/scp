@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<section class="content">
+
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Usuários</h3>
+    </div>
+    <div class="box-body">
+      <p>Aqui você pode incluir, excluir e alterar um usuário</p>
+
+      <a id="add_user" class="btn btn-app" data-toggle="modal" data-target="#myModal">
+        <i class="fa fa-user-plus"></i> Adicionar usuário
+      </a>
+
+
+      <!-- Modal content -->
+
+      <div  id="myModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Cadastro de usuário</h4>
+              </div>
+              <div class="modal-body">
+                <div class="box">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Preencha o formulário abaixo e clique em <strong>Cadastrar.</strong> </h3>
+                  </div>
+
+
+                  <form action="" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                      <div class="box-body">
+                        <div class="row">
+
+
+                          <h3> Informações gerais </h3>
+                          <!-- text input -->
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="nome">nome</label>
+                              <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome" maxlength="120" required />
+                            </div>
+
+                            <div class="form-group">
+                              <label for="cpf">cpf</label>
+                              <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Número de CPF" maxlength="120" required/>
+                            </div>
+                          </div>
+
+                          <!-- fim col nome/cpf (um abaixo do outro) -->
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="dataN">dataN</label>
+
+                              <div class="input-group">
+                                <div class="input-group-addon">
+                                  <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="date" class="form-control" name="dataN" id="dataN" class="datas" value=" " size="20" maxlength="10" maxlengt="8" value="dataN" required />
+                              </div>
+                              <!-- /.input group -->
+                            </div>
+
+                            <!-- fim data de nascimento -->
+
+
+                            <div class="form-group">
+                              <label for="cidade">cidade</label>
+                              <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade de origem do colaborador" maxlength="120" required />
+                            </div>
+                          </div>
+
+                          <!-- fim col data nascimento/ cidade -->
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="estado">estado</label>
+                              <select type="text" class="form-control" id="estado" name="estado" required />
+                              <option value="">Selecione</option>
+                              <option value="AC">Acre</option>
+                              <option value="AL">Alagoas</option>
+                              <option value="AP">Amapá</option>
+                              <option value="AM">Amazonas</option>
+                              <option value="BA">Bahia</option>
+                              <option value="CE">Ceará</option>
+                              <option value="DF">Distrito Federal</option>
+                              <option value="ES">Espirito Santo</option>
+                              <option value="GO">Goiás</option>
+                              <option value="MA">Maranhão</option>
+                              <option value="MS">Mato Grosso do Sul</option>
+                              <option value="MT">Mato Grosso</option>
+                              <option value="MG">Minas Gerais</option>
+                              <option value="PA">Pará</option>
+                              <option value="PB">Paraíba</option>
+                              <option value="PR">Paraná</option>
+                              <option value="PE">Pernambuco</option>
+                              <option value="PI">Piauí</option>
+                              <option value="RJ">Rio de Janeiro</option>
+                              <option value="RN">Rio Grande do Norte</option>
+                              <option value="RS">Rio Grande do Sul</option>
+                              <option value="RO">Rondônia</option>
+                              <option value="RR">Roraima</option>
+                              <option value="SC">Santa Catarina</option>
+                              <option value="SP">São Paulo</option>
+                              <option value="SE">Sergipe</option>
+                              <option value="TO">Tocantins</option>
+                            </select>
+
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="adress">adress</label>
+                            <input type="text" class="form-control" id="adress" name="adress" placeholder="Ex: Rua A, nº 15" maxlength="120" required/>
+                          </div>
+                        </div>
+
+                        <!-- fim col estado/endereço -->
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label for="bairro">bairro</label>
+                            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Ex: Centro" maxlength="120" required/>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="cep">cep</label>
+                            <input type="text" class="form-control" id="cep" name="cep" maxlength="12" required/>
+                          </div>
+
+                        </div>
+
+                        <!-- fim col  bairro/cep -->
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label for="complemento">complemento</label>
+                            <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Ex: Partão branco" maxlength="120" required/>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="setor">setor</label>
+                            <input type="text" class="form-control" id="setor" name="setor" placeholder="Ex: Diretoria" maxlength="120" required/>
+                          </div>
+                        
+                        </div>
+
+
+                        <div class="col-md-6">
+                            
+                          <div class="form-group">
+                            <label for="lotado">lotado</label>
+                            <input type="text" class="form-control" id="lotado" name="lotado" placeholder="Ex: Filial Palmas" maxlength="120" required/>
+                          </div>
+
+
+
+                        <div class="form-group">
+                            <label for="cargo">cargo</label>
+                            <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Ex: Fiscal 1" maxlength="120" required/>
+                          </div>
+                        
+                        </div>
+
+                      </div>
+
+
+
+                      <div class="row">
+                        <h3> Informações de contato </h3>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="telefone">telefone</label>
+                            <input type="text" class="form-control" id="telefone" name="telefone" placeholder="( )_ ____-____" maxlength="15" required/>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="whatsapp">whatsapp</label>
+                            <input type="text" class="form-control" id="whatsapp" name="whatsapp" placeholder="( )_ ____-____" maxlength="15" required/>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="email">email</label>
+                            <input type="email" name="email" class="form-control" placeholder="contato@mail.com" required/>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <!-- <div class="row">
+                        <h3> Informações de acesso</h3>
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label>Nome de usuário</label>
+                            <input type="text" class="form-control" placeholder="usuário para login" required/>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Senha</label>
+                            <input type="password" class="form-control" placeholder="senha para usuário" required/>
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label>Código</label>
+                            <input type="text" class="form-control" placeholder="Nº de registro funcional" required/>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Grupo de acesso</label>
+                            <div class="input-group">
+                              <div class="input-group-btn">
+                                <button id="add_user" class="btn btn-info pull-right" type="button" ><i class="fa fa-plus"></i></button>
+                              </div>
+
+                              <select class="form-control" name="grupo" required />
+                                <option value="">Selecione</option>
+                              </select>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div> -->
+
+                      <button class="btn btn-primary pull-right" type="submit">Cadastrar
+                      </button>
+                    </div>
+                  
+                  </div>
+                
+                </div>
+
+              </form>
+
+
+
+
+
+            <!-- /.box-header -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+      </div>
+      <!-- /.modal -->
+
+      <!-- /.example-modal -->
+
+      <a class="btn btn-app">
+        <i class="fa fa-users"></i> Adicionar Grupo de usuário
+      </a>
+
+      <a class="btn btn-app">
+        <i class="fa fa-edit"></i> Alterar
+      </a>
+
+      <a class="btn btn-app">
+        <i class="fa fa-user-times"></i> Inativar
+      </a>
+
+      <a class="btn btn-app">
+        <i class="fa fa-save"></i> Salvar
+      </a>
+    </div>
+  </div>
+  <!-- /.box-body -->
+
+
+
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">Usuário existentes</h3>
+
+      <div class="box-tools">
+        <div class="input-group input-group-sm" style="width: 250px;">
+          <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
+
+          <div class="input-group-btn">
+            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <table id="example1" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuário</th>
+            <th>Nome</th>
+            <th>Nº funcional</th>
+            <th>CPF</th>
+            <th>Grupo</th>
+            <th>Função</th>
+            <th>Email</th>
+            <th>Editar</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>emilia.aguiar</td>
+            <td>Emília Aguiar</td>
+            <td>254.652</td>
+            <td>039.223.251-06</td>
+            <td>Desenvolvimento</td>
+            <td>DEV Front-end</td>
+            <td>thaynaraswc@gmail.com</td>
+            <td>
+              <a class="btn btn-group">
+                <i class="fa fa-edit"></i> Alterar
+              </a>
+            </td>
+
+            <td><span class="label label-success">Ativo</span></td>
+          </tr>
+
+          <tr>
+            <td>002</td>
+            <td>chico</td>
+            <td>Raimundo Nonato</td>
+            <td>254.852</td>
+            <td>078.200.287-11</td>
+            <td>Desenvolvimento</td>
+            <td>DEV Back-end</td>
+            <td>email@gmail.com</td>
+            <td>
+              <a class="btn btn-group">
+                <i class="fa fa-edit"></i> Alterar
+              </a>
+            </td>
+
+            <td><span class="label label-danger">Inativo</span></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+  <div class="control-sidebar-bg"></div>
+</div>
+
+</section>
+
+<!-- /.content -->
+
+{% endblock %}

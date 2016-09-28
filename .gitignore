@@ -1,0 +1,9 @@
+#excluindo todo o conteudo o diretorio virtual, exceto o subdiretorio sistema
+scp/*
+!scp/sistema
+!scp/static_in_env
+!scp/static_in_pro
+#exclui todos os arquivos com as seguintes extenções
+*.pyc
+*.pyo
+.env
