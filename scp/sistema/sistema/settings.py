@@ -130,13 +130,10 @@ DATE_INPUT_FORMATS = ('%d/%m/%Y',)
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_pro", "static_root")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
+    os.path.join(BASE_DIR, "static"),
     # os.path.join(BASE_DIR, "static_in_env"),
     # '/var/www/static/',
 )
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")

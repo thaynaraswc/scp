@@ -1,0 +1,10 @@
+a:link{ 
+  text-decoration:none;
+  color: #000000 ; 
+}
+a:visted{
+  color: #000000;
+} 
+a:active{
+  color:#000000;
+}
