@@ -30,6 +30,10 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="dist/css/skins/skin-black.min.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/style.css">
+ 
+ 
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -150,7 +154,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="usuarios.html"><i class="fa fa-circle-o"></i>Ver todos</a></li>
-            <li><a href="new-user.html"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
+            <li><a href="index2.html"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
           </ul>
         </li>
         <li class=" treeview">
@@ -325,8 +329,6 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -340,234 +342,146 @@
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
+
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-            <h3>152</h3>
 
-              <p>Patrimônio</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-list-alt" aria-hidden="true""></i>
-            </div>
-            <a href="#" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Últimos cadastros</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">Ver Mais <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>Usuários cadastrados</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="usuarios.html" class="small-box-footer">Ver mais  <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>+</h3>
-
-              <p>Relatórios</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
-          <!-- TO DO List -->
-          <div class="row">
-          <div class="col-md-6">
-          <div class="box box-primary">
-            <div class="box-header">
-              <i class="ion ion-clipboard"></i>
-
-              <h3 class="box-title">Tarefas</h3>
+      <div class="col-md-6">
+          <div class="box box-danger collapsed-box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Tipo de item</h3>
 
               <div class="box-tools pull-right">
-                <ul class="pagination pagination-sm inline">
-                  <li><a href="#">&laquo;</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">&raquo;</a></li>
-                </ul>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
               </div>
+              <!-- /.box-tools -->
             </div>
+          
             <!-- /.box-header -->
             <div class="box-body">
-              <ul class="todo-list">
-                <li>
-                  <!-- drag handle -->
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <!-- checkbox -->
-                  <input type="checkbox" value="">
-                  <!-- todo text -->
-                  <span class="text">Backup local X</span>
-                  <!-- Emphasis label -->
-                  <!-- General tools such as edit or delete-->
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Manutenção impressora X</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Configuração X </span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Despacho nº 12510</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Reunião 18:15</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Minutar sentença</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <!-- /.box-body -->
-            <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Nova tarefa</button>
-            </div>
-          </div>
-          </div>
-         
-          <!-- /.box -->
-          
-          <!-- Calendar -->
-         
-          <div class="col-md-6">
-          <div class="box box-solid bg-green-gradient">
-            <div class="box-header">
-              <i class="fa fa-calendar"></i>
+              <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#itens" data-toggle="tab">Grupos</a></li>
+              <li><a href="#novo-item" data-toggle="tab">Novo</a></li>
+              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="itens">
+                <div class="row">
+                <div class="box-tools">
+                          <div class="input-group input-group-sm" >
+                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
 
-              <h3 class="box-title">Calendar</h3>
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <!-- button with a dropdown -->
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bars"></i></button>
-                  <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="#">Add new event</a></li>
-                    <li><a href="#">Clear events</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View calendar</a></li>
-                  </ul>
+                            <div class="input-group-btn">
+                              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                <!-- text input -->
+                <h3 style="margin-left:15px;"> Tipo de item </h3>
+                <div >
+
+                  <table  class="table table-bored table-striped">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>CÓD</th>
+                              <th>Nome</th>
+                              <th>Descrição</th>
+                              
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>001</td>
+                              <td>IMP1</td>
+                              <td>Impressora</td>
+                              <td>Samsung 3180M</td>
+                            </tr>
+
+                            <tr>
+                              <td>002</td>
+                              <td>MNTR1</td>
+                              <td>Monitor</td>
+                              <td>DELL 21,5"</td>
+                            </tr>
+
+                            <tr>
+                              <td>003</td>
+                              <td>PC1</td>
+                              <td>COMPUTADOR</td>
+                              <td>HP i5 4GB 500HD</td>
+                            </tr>
+
+                            <tr>
+                              <td>004</td>
+                              <td>NTBK1</td>
+                              <td>NOTEBOOK</td>
+                              <td>DELL i5 8GB 1TB</td>
+                            </tr>
+
+                          </tbody>
+
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="novo-item">
+                <div class="row">
+                  
+                  <h3 style="margin-left:15px;"> Novo Tipo </h3>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Nome</label>
+                      <input class="form-control" type="text" name="nome-grupo" placeholder="Setor de controle Interno" required /> 
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Código</label>
+                      <input class="form-control" type="text" name="cod-grupo" placeholder="ex: SCI" required />
+                    </div>
+                      
+                    </div>
+                    <div class="form-group" style="margin:10px;">
+                    <label>Descrição</label>
+                    <textarea class="form-control" rows="3" name="descricao-grupo" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
+                    
+                      
+                    </div>
+                  <div class="form-group">
+                  <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
+                </button>
                 </div>
-                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                </button>
+                </div>
               </div>
-              <!-- /. tools -->
+              
+              <!-- /.tab-pane -->
             </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <!--The calendar -->
-              <div id="calendar" style="width: 100%"></div>
+            <!-- /.tab-content -->
             </div>
             <!-- /.box-body -->
-            </div>
-            
-            
-              <!-- /.row -->
-            </div>
           </div>
           <!-- /.box -->
+          </div>
+          </div>
+        </div>
+        </div>
 
-        </section>
-        <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
+
+
+
 
     </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
+
+    </div>
+
+    <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Versão</b> 1.9
     </div>
@@ -618,5 +532,19 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+<script src="http://digitalbush.com/files/jquery/maskedinput/rc3/jquery.maskedinput.js" type="text/javascript">
+</script>
+<script>
+        jQuery(function($){
+          $(".datas").mask("99/99/9999");
+          $("#cpf").mask("999.999.999-99");
+          $("#CEP").mask("99999-999");
+          $("#telefone").mask("(99)9 9999-9999");
+          $("#whatsapp").mask("(99)9 9999-9999");
+        });
+      </script>
+
 </body>
 </html>
+
