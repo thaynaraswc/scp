@@ -154,7 +154,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="usuarios.html"><i class="fa fa-circle-o"></i>Ver todos</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
+            <li><a href="new-user.html"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
           </ul>
         </li>
         <li class=" treeview">
@@ -345,6 +345,118 @@
     <section class="content">
 
       <div class="row">
+
+      <div class="row" style="margin: 10px;">
+          <div class="box box-success box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Cadastro de movimentação</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <!-- text input -->
+              <div class="row">
+                
+                <!-- <h4 style="margin:15px;"> Insira o patrimônio </h4> -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Tipo</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option>Computador</option>
+                        <option>Mesa</option>
+                        <option>Cadeira</option>
+                        <option>Impressora</option>
+                        <option>Switch</option>
+                        <option>Estabilizador</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Modelo</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option id="modelo">DELL 21"</option>
+                        <option>Samsung sm30</option>
+                        <option>HP-i3-HD500</option>
+                        <option>modelo1</option>
+                      </select>
+                  </div>
+                  
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Tombo</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option id="tombo">125410</option>
+                        <option>125025</option>
+                        <option>250152</option>
+                        <option>156182</option>
+                      </select>
+                  </div>
+                  
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Situação</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option id="em-uso">Em uso</option>
+                        <option>Manutenção</option>
+                        <option>Reserva</option>
+                        <option>Defeito</option>
+                      </select>
+                  </div>
+                  
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Servidor</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option id="em-uso">FÁBIO</option>
+                        <option>MARIA</option>
+                        <option>MARCOS</option>
+                        <option>JOANA</option>
+                      </select>
+                  </div>
+                  
+                </div>
+                 <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Proprietário</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option id="">Fórum</option>
+                        <option>Secretaria de segurança</option>
+                        <option>UFT</option>
+                        
+                      </select>
+                  </div>
+                  
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Local</label>
+                      <select class="form-control" name="tipo-mov-item">
+                        <option id="">Sala 5</option>
+                        <option>Auditório</option>
+                        <option>Copa</option>
+                        
+                      </select>
+                  </div>
+                  
+                </div>
+              </div>
+              
+          </div>
+          <!-- /.box -->
+          </div>
+          </div>  
 
 
       <div class="col-md-6">
@@ -610,11 +722,26 @@
                     </div>
                       
                     </div>
+
+                    <div class="col-md-6">
+                    <div class="form-group">
+                      <label>ORIGEM</label>
+
+                      <select class="form-control" name="tipo-do-item" required>
+                        <option value="FORUM">FORUM</option>
+                        <option value="SEC-SEG">SECRETARIA DE SEGURANÇA</option>
+                        <option value="LOCAL-3">LOCAL 3</option>
+                        <option value="LOCAL-4">LOCAL 4</option>
+                      </select>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
                     <div class="form-group" style="margin:10px;">
                     <label>Descrição</label>
                     <textarea class="form-control" rows="3" name="descricao-grupo" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
                     
                       
+                    </div>
                     </div>
                   <div class="form-group">
                   <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
@@ -634,67 +761,7 @@
           </div>  
         </div>
 
-        <div class="row" style="margin: 10px;">
-          <div class="box box-success collapsed-box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Cadastro de movimentação</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-          
-            <!-- /.box-header -->
-            <div class="box-body">
-                <div class="row">
-                <div class="box-tools col-md-8">
-                          <div class="input-group input-group-sm" >
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
-
-                            <div class="input-group-btn">
-                              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                          </div>
-                        </div>
-                        </div>
-
-                <!-- text input -->
-              <div class="row">
-                
-                <h4 style="margin:15px;"> Cadastro de movimentação </h4>
-                <div class="col-md-6">
-                  <div class="form-group">
-                      <label>Tipo</label>
-                      <select class="form-control" name="tipo-mov-item">
-                        <option>Computador</option>
-                        <option>Mesa</option>
-                        <option>Cadeira</option>
-                        <option>Impressora</option>
-                        <option>Switch</option>
-                        <option>Estabilizador</option>
-                      </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label>Situação</label>
-                      <select class="form-control" name="tipo-mov-item">
-                        <option id="em-uso">Em uso</option>
-                        <option>Manutenção</option>
-                        <option>Reserva</option>
-                        <option>Defeito</option>
-                      </select>
-                  </div>
-                  
-                </div>
-              </div>
-              
-          </div>
-          <!-- /.box -->
-          </div>
-          </div>  
+        
 
         </div>
         </div>
