@@ -206,24 +206,19 @@
                 <div class="col-md-6">
                   <div class="form-group">
                       <label>Tipo</label>
-                      <select class="form-control" name="tipo-mov-item">
-                        <option>Computador</option>
-                        <option>Mesa</option>
-                        <option>Cadeira</option>
-                        <option>Impressora</option>
-                        <option>Switch</option>
-                        <option>Estabilizador</option>
+                      <select class="form-control" name="tipo-patrimonio" id="tipo-patrimonio" onchange="changeMarca();">
+                          <option value="">Selecione uma área</option>
+                          <option value="computadores">computadores</option>
+                          <option value="impressoras">impressoras</option>
                       </select>
+
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Modelo</label>
-                      <select class="form-control" name="tipo-mov-item">
-                        <option id="modelo">DELL 21"</option>
-                        <option>Samsung sm30</option>
-                        <option>HP-i3-HD500</option>
-                        <option>modelo1</option>
+                    <label>Marca</label>
+                      <select class="form-control" name="marca-patrimonio" id="marca-patrimonio" onchange="changeModelo();">      
+                          <option value="">Selecione</option>  
                       </select>
                   </div>
                   
@@ -231,12 +226,19 @@
 
                 <div class="col-md-6">
                   <div class="form-group">
+                    <label>Modelo</label>
+                      <select class="form-control" id="modelo-patrimonio" name="modelo-patrimonio" onchange="changeTombo();">
+                        <option value="">Selecione</option>
+                      </select>
+                  </div>
+                  </div>
+
+
+                <div class="col-md-6">
+                  <div class="form-group">
                     <label>Tombo</label>
-                      <select class="form-control" name="tipo-mov-item">
-                        <option id="tombo">125410</option>
-                        <option>125025</option>
-                        <option>250152</option>
-                        <option>156182</option>
+                      <select class="form-control" id="tombo-patrimonio" name="tombo-patrimonio">
+                        <option value="">Selecione</option>
                       </select>
                   </div>
                   
@@ -630,6 +632,7 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="funcao.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

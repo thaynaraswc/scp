@@ -1,21 +1,26 @@
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
-
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User, Permission, Group
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
-from .forms import RegistroForm, UserForm
-from .models import Registro
+from .models import Registro, Item, Movimentacao, Tipo
+
+from .forms import RegistroForm, TipoForm, ItemForm, UserForm, MovimentacaoForm
 
 # Create your views here.
+
+
 
 def users_view(request):
 
 	form = RegistroForm(request.POST or None)
-	#if request.user.is_authenticated():
+	
+    #if request.user.is_authenticated():
 	#    title = "My title %s" %(request.user)
 
 	#if request.method == "POST":
 	#    print request.POST
+
 
 	queryset = Registro.objects.all()
 
@@ -76,6 +81,63 @@ def lista_view(request):
 
     return render(request, "list.html", context)
 
+def itens_view(request):
+
+    form_item = ItemForm(request.POST or None)
+    form_tipo = TipoForm(request.POST or None)
+    form_movimentacao = MovimentacaoForm(request.POST or None)
+
+    #if request.user.is_authenticated():
+    #    title = "My title %s" %(request.user)
+
+    #if request.method == "POST":
+    #    print request.POST
+
+    if form_item.is_valid():
+        #form.save()
+        instance = form_item.save(commit=False)
+        #if not instance.full_name:
+        #    instance.full_name = "Justin"
+        instance.save()
+
+    if form_tipo.is_valid():
+        #form.save()
+        instance = form_tipo.save(commit=False)
+        #if not instance.full_name:
+        #    instance.full_name = "Justin"
+        instance.save()
+
+    if form_movimentacao.is_valid():
+        #form.save()
+        instance = form_movimentacao.save(commit=False)
+        #if not instance.full_name:
+        #    instance.full_name = "Justin"
+        instance.save()
+
+    item = Item.objects.all()
+    query = request.GET.get("q")
+
+    if query:
+        item = item.filter(
+            Q(id__icontains=query) |
+            Q(tipo__icontains=query) |
+            Q(origem__icontains=query) |
+            Q(descricao__icontains=query)
+            ).distinct()
+
+    queryset = Registro.objects.all()
+
+    # print(str(item.tipo))
+
+    context = {
+    "queryset": queryset,
+    "item": item,
+    "form_tipo": form_tipo,
+    "form_movimentacao": form_movimentacao,
+    }
+
+    return render(request, "new-item.html", context)
+
 
 def registro_alterar(request, registro_id):
     instance = get_object_or_404(Registro, pk=registro_id)
@@ -118,8 +180,7 @@ def login_view(request):
             if user.is_active:
 
                 login(request, user)
-                albums = Registro.objects.filter(user=request.user)
-                return render(request, 'usuarios.html', {'albums': albums})
+                return render(request, 'usuarios.html', {'albums': queryset})
             else:
                 return render(request, 'login.html', {'error_message': 'Your account has been disabled'})
         else:
@@ -129,6 +190,7 @@ def login_view(request):
 
 def registro_view(request):
     form = UserForm(request.POST or None)
+    print(form)
     if form.is_valid():
         user = form.save(commit=False)
         username = form.cleaned_data['username']
@@ -149,4 +211,4 @@ def registro_view(request):
     context = {
         "form": form,
     }
-    return render(request, 'registro.html', context)
+    return render(request, 'register.html', context)

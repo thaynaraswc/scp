@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Registro
+from .models import Registro, Tipo, Movimentacao, Item
 
 class RegistroForm(forms.ModelForm):
     class Meta:
@@ -22,6 +22,39 @@ class RegistroForm(forms.ModelForm):
         'setor',
         'email',
     ]
+
+
+class ItemForm(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = ['tipo',
+        'patrimonio',
+        'origem',
+        'descricao',
+    ]
+
+class TipoForm(forms.ModelForm):
+    class Meta:
+        model = Tipo
+        fields = ['nome',
+        'codigo',
+        'descricao',
+    ]
+
+
+class MovimentacaoForm(forms.ModelForm):
+    class Meta:
+        model = Movimentacao
+        fields = ['tipo',
+        'modelo',
+        'marca',
+        'tombo',
+        'situacao',
+        'servidor',
+        'proprietario',
+        'local',
+    ]
+
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)

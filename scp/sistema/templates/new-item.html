@@ -1,0 +1,452 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<section class="content">
+
+  <div class="row">
+
+    <div class="row" style="margin: 10px;">
+      <div class="box box-success box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro de movimentação</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <!-- text input -->
+          <div class="row">
+
+            <form method="post" action="">{% csrf_token %}
+              <!-- <h4 style="margin:15px;"> Insira o patrimônio </h4> -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Tipo</label>
+                  <select class="form-control" name="tipo" id="tipo-patrimonio" onchange="changeMarca();">
+                    <option value="">Selecione uma área</option>
+                    <option value="computadores">computadores</option>
+                    <option value="impressoras">impressoras</option>
+                  </select>
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Marca</label>
+                  <select class="form-control" name="marca" id="marca-patrimonio" onchange="changeModelo();">      
+                    <option value="">Selecione</option>  
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Modelo</label>
+                  <select class="form-control" id="modelo-patrimonio" name="modelo" onchange="changeTombo();">
+                    <option value="">Selecione</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Tombo</label>
+                  <select class="form-control" id="tombo-patrimonio" name="tombo">
+                    <option value="">Selecione</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Situação</label>
+                  <select class="form-control" name="situacao">
+                    <option id="em-uso">Em uso</option>
+                    <option>Manutenção</option>
+                    <option>Reserva</option>
+                    <option>Defeito</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Servidor</label>
+                  <select class="form-control" name="servidor">
+                    <option id="em-uso">FÁBIO</option>
+                    <option>MARIA</option>
+                    <option>MARCOS</option>
+                    <option>JOANA</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Proprietário</label>
+                  <select class="form-control" name="propriedade">
+                    <option id="">Fórum</option>
+                    <option>Secretaria de segurança</option>
+                    <option>UFT</option>
+
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Local</label>
+                  <select class="form-control" name="local">
+                    <option id="">Sala 5</option>
+                    <option>Auditório</option>
+                    <option>Copa</option>
+
+                  </select>
+                </div>
+
+              </div>
+            </div>
+          
+          </form>
+
+        </div>
+        <!-- /.box -->
+      </div>
+    </div>  
+
+
+    <div class="col-md-6">
+      <div class="box box-danger collapsed-box box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro de tipo</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+            </button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#itenstipo" data-toggle="tab">Itens</a></li>
+              <li><a href="#novotipo-item" data-toggle="tab">Novo</a></li>
+              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="itenstipo">
+                <div class="row">
+                  <div class="box-tools">
+                    <div class="input-group input-group-sm" >
+                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
+
+                      <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- text input -->
+                  <h4 > Tipos cadastrados </h4>
+                  <div >
+
+                    <table  class="table table-bored table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>CÓD</th>
+                          <th>Nome</th>
+                          <th>Descrição</th>
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>001</td>
+                          <td>IMP1</td>
+                          <td>Impressora</td>
+                          <td>Samsung 3180M</td>
+                        </tr>
+
+                        <tr>
+                          <td>002</td>
+                          <td>MNTR1</td>
+                          <td>Monitor</td>
+                          <td>DELL 21,5"</td>
+                        </tr>
+
+                        <tr>
+                          <td>003</td>
+                          <td>PC1</td>
+                          <td>COMPUTADOR</td>
+                          <td>HP i5 4GB 500HD</td>
+                        </tr>
+
+                        <tr>
+                          <td>004</td>
+                          <td>NTBK1</td>
+                          <td>NOTEBOOK</td>
+                          <td>DELL i5 8GB 1TB</td>
+                        </tr>
+
+                      </tbody>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="novotipo-item">
+                <div class="row">
+
+                <h4 style="margin-left:15px;"> Cadastrar novo tipo </h4>
+
+                  <form method="post" action="">{% csrf_token %}
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Nome</label>
+                        <input class="form-control" type="text" name="nome" placeholder="Setor de controle Interno" required /> 
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Código</label>
+                        <input class="form-control" type="text" name="codigo" placeholder="ex: SCI" required />
+                      </div>
+
+                    </div>
+                    
+                    <div class="form-group" style="margin:10px;">
+                      <label>Descrição</label>
+                      <textarea class="form-control" rows="3" name="descricao" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
+                      </button>
+                    </div>
+
+                  </form>
+                
+                </div>
+              </div>
+              
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+      </div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div class="box box-warning collapsed-box box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">Cadastro de novo item</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+            </button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#itens" data-toggle="tab">Itens</a></li>
+              <li><a href="#novo-item" data-toggle="tab">Novo</a></li>
+              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="itens">
+                <div class="row">
+                  <form method="GET" action="">
+                    <div class="box-tools">
+                      <div class="input-group input-group-sm" >
+                        <input type="text" name='q' class="form-control pull-right" placeholder="Procurar" value="{{ request.GET.q }}">
+
+                        <div class="input-group-btn">
+                          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- text input -->
+                  <h4 > Itens cadastrados </h4>
+                  <div style="width:500px; height: 205px; overflow: auto;"">
+                    <table  class="table table-bored table-striped ">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>CÓD</th>
+                          <th>Patrimônio</th>
+                          <th>Tipo</th>
+                          <th>Descrição</th>
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for itens in item %}
+                        <tr>
+                          <td>{{ itens.id }}</td>
+                          <td>{{ itens.tipo }}</td>
+                          <td>{{ itens.patrimonio }}</td>
+                          <td>{{ itens.origem }}</td>
+                          <td>{{ itens.descricao }}</td>
+                          
+                        </tr>
+                      {% endfor %}
+                        <tr>
+                          <td>002</td>
+                          <td>MNTR</td>
+                          <td>152463-5</td>
+                          <td>Monitor</td>
+                          <td>DELL 21,5"</td>
+
+
+                        </tr>
+
+                        <tr>
+                          <td>003</td>
+                          <td>PC</td>
+                          <td>152463-5</td>
+                          <td>COMPUTADOR</td>
+                          <td>HP i5 4GB 500HD</td>
+
+
+                        </tr>
+
+                        <tr>
+                          <td>004</td>
+                          <td>NTBK</td>
+                          <td>152463-5</td>
+                          <td>NOTEBOOK</td>
+                          <td>DELL i5 8GB 1TB</td>
+
+
+                        </tr>
+
+                        <tr>
+                          <td>005</td>
+                          <td>NTBK</td>
+                          <td>152463-5</td>
+                          <td>NOTEBOOK</td>
+                          <td>DELL i7 8GB 1TB</td>
+
+
+                        </tr>
+
+                        <tr>
+                          <td>006</td>
+                          <td>NTBK</td>
+                          <td>152463-5</td>
+                          <td>NOTEBOOK</td>
+                          <td>DELL i5 8GB 1TB</td>
+
+                        </tr>
+                      </tbody>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="novo-item">
+                <div class="row">
+
+                  <h4 style="margin-left:15px;"> Cadastrar novo tipo </h4>
+
+                  <form method="post" action="">{% csrf_token %}
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Tipo</label>
+
+                        <select class="form-control" name="tipo" required>
+                          <option value="PC">Computador</option>
+                          <option value="NTBK">Notebook</option>
+                          <option value="IMP">Impressora</option>
+                          <option value="MSA">Mesa</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Patrimônio</label>
+                        <input class="form-control" type="text" name="patrimonio" placeholder="ex: 152872-9" required />
+                      </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>ORIGEM</label>
+
+                        <select class="form-control" name="origem" required>
+                          <option value="FORUM">FORUM</option>
+                          <option value="SEC-SEG">SECRETARIA DE SEGURANÇA</option>
+                          <option value="LOCAL-3">LOCAL 3</option>
+                          <option value="LOCAL-4">LOCAL 4</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group" style="margin:10px;">
+                        <label>Descrição</label>
+                        <textarea class="form-control" rows="3" name="descricao" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
+
+                        
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
+                      </button>
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+              
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+      </div>
+    </div>  
+  </div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+</section>
+
+{% endblock %}

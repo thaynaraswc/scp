@@ -3,39 +3,38 @@
 
 {% block content %} 
 <section class="content">
+  <div class="row">
+    <div class="col-md-12">
+     <div class="box box-primary x box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de Usuário</h3>
 
-    <div class="row">
-        <div class="col-md-6">
-          <div class="box box-primary collapsed-box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Cadastro de Usuário</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+        </div>
+        <!-- /.box-tools -->
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab_1" data-toggle="tab">Geral</a></li>
+            <li><a href="#tab_2" data-toggle="tab">Contato</a></li>
+            <li><a href="#acessos" data-toggle="tab">Acesso</a></li>
+            <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_1">
+              <div class="row">
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab_1" data-toggle="tab">Geral</a></li>
-              <li><a href="#tab_2" data-toggle="tab">Contato</a></li>
-              <li><a href="#tab_3" data-toggle="tab">Acesso</a></li>
-              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab_1">
-                <div class="row">
-                
                 <!-- text input -->
                 <h3 style="margin-left:15px;"> Informações gerais </h3>
                 <div class="col-md-6">
 
                   <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" class="form-control" placeholder="Digite o nome" required />
+                    <input type="text" class="form-control" name="nome" placeholder="Digite o nome" required />
                   </div>
 
                   <div class="form-group">
@@ -45,12 +44,12 @@
 
                   <div class="form-group">
                     <label>Cidade</label>
-                    <input type="text" class="form-control" placeholder="Cidade de origem do colaborador" required />
+                    <input type="text" class="form-control" name="cidade" placeholder="Cidade de origem do colaborador" required />
                   </div>
 
                   <div class="form-group">
                     <label>Bairro</label>
-                    <input class="form-control" placeholder="Ex: Centro" required/>
+                    <input class="form-control" name="bairro" placeholder="Ex: Centro" required/>
                   </div>
 
                   <div class="form-group">
@@ -60,9 +59,9 @@
 
                   <div class="form-group">
                     <label>Lotado</label>
-                    <input class="form-control" placeholder="Ex: Filial Palmas" required/>
+                    <input class="form-control" name="lotado" placeholder="Ex: Filial Palmas" required/>
                   </div>   
-                  
+
 
                 </div>
 
@@ -85,288 +84,288 @@
                     <label>Estado</label>
 
                     <select class="form-control" name="estado" required >
+                      <option value="">Selecione</option>
+                      <option value="AC">Acre</option>
+                      <option value="AL">Alagoas</option>
+                      <option value="AP">Amapá</option>
+                      <option value="AM">Amazonas</option>
+                      <option value="BA">Bahia</option>
+                      <option value="CE">Ceará</option>
+                      <option value="DF">Distrito Federal</option>
+                      <option value="ES">Espirito Santo</option>
+                      <option value="GO">Goiás</option>
+                      <option value="MA">Maranhão</option>
+                      <option value="MS">Mato Grosso do Sul</option>
+                      <option value="MT">Mato Grosso</option>
+                      <option value="MG">Minas Gerais</option>
+                      <option value="PA">Pará</option>
+                      <option value="PB">Paraíba</option>
+                      <option value="PR">Paraná</option>
+                      <option value="PE">Pernambuco</option>
+                      <option value="PI">Piauí</option>
+                      <option value="RJ">Rio de Janeiro</option>
+                      <option value="RN">Rio Grande do Norte</option>
+                      <option value="RS">Rio Grande do Sul</option>
+                      <option value="RO">Rondônia</option>
+                      <option value="RR">Roraima</option>
+                      <option value="SC">Santa Catarina</option>
+                      <option value="SP">São Paulo</option>
+                      <option value="SE">Sergipe</option>
+                      <option value="TO">Tocantins</option>
+                    </select>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label>Endereço</label>
+                    <input class="form-control" name="endereco" placeholder="Ex: Rua A, nº 15" required/>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Complemento</label>
+                    <input class="form-control" name="complemento" placeholder="Ex: Partão branco" required/>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Setor</label>
+                    <input class="form-control" name="setor" placeholder="Ex: Diretoria" required/>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Cargo</label>
+                    <input class="form-control" name="cargo" placeholder="Ex: Fiscal 1" required/>
+                  </div>
+
+                </div>
+                <!-- <button class="btn btn-success pull-right" type="submit">Salvar
+              </button> -->
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="tab_2">
+            <div class="row">
+
+              <h3 style="margin-left:15px;"> Informações de contato </h3>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Telefone</label>
+                  <input class="form-control" id="telefone" name="telefone" placeholder="( )_ ____-____" required/>
+                </div>
+                <div class="form-group">
+                  <label>WhatsApp</label>
+                  <input class="form-control" id="whatsapp" name="whatsapp" placeholder="( )_ ____-____" required/>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="contato@mail.com" required/>
+                </div>
+              </div>
+              <div class="form-group">
+                  <!-- <button class="btn btn-success " style="margin-left: 80px; margin-top: 25px; " type="submit">Salvar
+                </button> -->
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="acessos">
+            <div class="row">
+              <h3 style="margin-left:15px;"> Permissões</h3>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nome de usuário</label>
+                  <input type="text" class="form-control" name="nome-user" placeholder="usuário para login" required/>
+                </div>
+
+                <div class="form-group">
+                  <label>Senha</label>
+                  <input type="password" class="form-control" name="senha" placeholder="senha para usuário" required/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Código</label>
+                  <input type="text" class="form-control" name="codigo" placeholder="Nº de registro funcional" required/>
+                </div>
+                <div class="form-group">      
+                  <label>Grupo de acesso</label>
+
+                  <select class="form-control" name="grupo" required >
                     <option value="">Selecione</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espirito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
                   </select>
 
                 </div>
 
-                <div class="form-group">
-                  <label>Endereço</label>
-                  <input class="form-control" placeholder="Ex: Rua A, nº 15" required/>
-                </div>
-
-                <div class="form-group">
-                  <label>Complemento</label>
-                  <input class="form-control" placeholder="Ex: Partão branco" required/>
-                </div>
-
-                <div class="form-group">
-                  <label>Setor</label>
-                  <input class="form-control" placeholder="Ex: Diretoria" required/>
-                </div>
-
-                <div class="form-group">
-                  <label>Cargo</label>
-                  <input class="form-control" placeholder="Ex: Fiscal 1" required/>
-                </div>
-
-                </div>
+              </div>
+            </div>
                 <!-- <button class="btn btn-success pull-right" type="submit">Salvar
-                </button> -->
-                </div>
-                </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_2">
-                <div class="row">
-                  
-                  <h3 style="margin-left:15px;"> Informações de contato </h3>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Telefone</label>
-                      <input class="form-control" id="telefone" name="telefone" placeholder="( )_ ____-____" required/>
-                    </div>
-                    <div class="form-group">
-                      <label>WhatsApp</label>
-                      <input class="form-control" id="whatsapp" name="whatsapp" placeholder="( )_ ____-____" required/>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Email</label>
-                      <input type="email" name="email" class="form-control" placeholder="contato@mail.com" required/>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                  <!-- <button class="btn btn-success " style="margin-left: 80px; margin-top: 25px; " type="submit">Salvar
-                </button> -->
-                </div>
-                </div>
-              </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_3">
-                <div class="row">
-                  <h3 style="margin-left:15px;"> Informações de acesso</h3>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Nome de usuário</label>
-                      <input type="text" class="form-control" placeholder="usuário para login" required/>
-                    </div>
-
-                    <div class="form-group">
-                      <label>Senha</label>
-                      <input type="password" class="form-control" placeholder="senha para usuário" required/>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Código</label>
-                      <input type="text" class="form-control" placeholder="Nº de registro funcional" required/>
-                    </div>
-                    <div class="form-group">      
-                      <label>Grupo de acesso</label>
-                      
-                        <select class="form-control" name="grupo" required >
-                          <option value="">Selecione</option>
-                        </select>
-
-                    </div>
-                              
-                  </div>
-                </div>
-                <!-- <button class="btn btn-success pull-right" type="submit">Salvar
-                </button> -->
+              </button> -->
             </div>
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-            </div>
-            <!-- /.box-body -->
           </div>
-          <!-- /.box -->
-          </div>
-          <!-- /.box -->
+          <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+  <!-- /.box -->
 
 
-        <!-- /col -->
+  <!-- /col -->
 
-        <div class="col-md-6">
-          <div class="box box-danger collapsed-box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">Grupo de acesso</h3>
+  <div class="col-md-6">
+    <div class="box box-danger collapsed-box box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Grupo de acesso</h3>
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-          
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#grupos" data-toggle="tab">Grupos</a></li>
-              <li><a href="#novo" data-toggle="tab">Novo</a></li>
-              <li><a href="#tab_3" data-toggle="tab">Acesso</a></li>
-              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="grupos">
-                <div class="row">
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+          </button>
+        </div>
+        <!-- /.box-tools -->
+      </div>
+
+      <!-- /.box-header -->
+      <div class="box-body">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#grupos" data-toggle="tab">Grupos</a></li>
+            <li><a href="#novo" data-toggle="tab">Novo</a></li>
+            <li><a href="#tab_3" data-toggle="tab">Acesso</a></li>
+            <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="grupos">
+              <div class="row">
                 <div class="box-tools">
-                          <div class="input-group input-group-sm" >
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
+                  <div class="input-group input-group-sm" >
+                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
 
-                            <div class="input-group-btn">
-                              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                          </div>
-                        </div>
+                    <div class="input-group-btn">
+                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
                 <!-- text input -->
                 <h3 style="margin-left:15px;"> Grupos existentes </h3>
                 <div >
 
                   <table  class="table table-bored table-striped">
-                          <thead>
-                            <tr>
-                              <th>ID</th>
-                              <th>CÓD</th>
-                              <th>Nome</th>
-                              
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>CÓD</th>
+                        <th>Nome</th>
 
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>001</td>
-                              <td>SCE</td>
-                              <td>SETOR CONTROLE EXTERNO</td>
-                            </tr>
 
-                            <tr>
-                              <td>001</td>
-                              <td>SCI</td>
-                              <td>SETOR CONTROLE INTERNO</td>
-                            </tr>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>001</td>
+                        <td>SCE</td>
+                        <td>SETOR CONTROLE EXTERNO</td>
+                      </tr>
 
-                          </tbody>
+                      <tr>
+                        <td>001</td>
+                        <td>SCI</td>
+                        <td>SETOR CONTROLE INTERNO</td>
+                      </tr>
 
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="novo">
-                <div class="row">
-                  
-                  <h3 style="margin-left:15px;"> Novo Grupo </h3>
+                    </tbody>
 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Nome</label>
-                      <input class="form-control" type="text" name="nome-grupo" placeholder="Setor de controle Interno" required /> 
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Código</label>
-                      <input class="form-control" type="text" name="cod-grupo" placeholder="ex: SCI" required />
-                    </div>
-                      
-                    </div>
-                    <div class="form-group" style="margin:10px;">
-                    <label>Descrição</label>
-                    <textarea class="form-control" rows="3" name="descricao-grupo" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
-                    
-                      
-                    </div>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="novo">
+              <div class="row">
+
+                <h3 style="margin-left:15px;"> Novo Grupo </h3>
+
+                <div class="col-md-6">
                   <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" type="text" name="nome-grupo" placeholder="Setor de controle Interno" required /> 
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Código</label>
+                    <input class="form-control" type="text" name="cod-grupo" placeholder="ex: SCI" required />
+                  </div>
+
+                </div>
+                <div class="form-group" style="margin:10px;">
+                  <label>Descrição</label>
+                  <textarea class="form-control" rows="3" name="descricao-grupo" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
+
+
+                </div>
+                <div class="form-group">
                   <!-- <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
                 </button> -->
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="tab_3">
+            <div class="row">
+              <h3 style="margin-left:15px;"> Informações de acesso</h3>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Nome de usuário</label>
+                  <input type="text" class="form-control" placeholder="usuário para login" required/>
                 </div>
+
+                <div class="form-group">
+                  <label>Senha</label>
+                  <input type="password" class="form-control" placeholder="senha para usuário" required/>
                 </div>
               </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_3">
-                <div class="row">
-                  <h3 style="margin-left:15px;"> Informações de acesso</h3>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Nome de usuário</label>
-                      <input type="text" class="form-control" placeholder="usuário para login" required/>
-                    </div>
-
-                    <div class="form-group">
-                      <label>Senha</label>
-                      <input type="password" class="form-control" placeholder="senha para usuário" required/>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Código</label>
-                      <input type="text" class="form-control" placeholder="Nº de registro funcional" required/>
-                    </div>
-                    <div class="form-group">      
-                      <label>Grupo de acesso</label>
-                      
-                        <select class="form-control" name="grupo" required >
-                          <option value="">Selecione</option>
-                        </select>
-
-                      
-                    </div>
-                              
-                  </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Código</label>
+                  <input type="text" class="form-control" placeholder="Nº de registro funcional" required/>
                 </div>
+                <div class="form-group">      
+                  <label>Grupo de acesso</label>
+
+                  <select class="form-control" name="grupo" required >
+                    <option value="">Selecione</option>
+                  </select>
+
+
+                </div>
+
+              </div>
+            </div>
                 <!-- <button class="btn btn-success pull-right" type="submit">Salvar
-                </button> -->
+              </button> -->
             </div>
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-            </div>
-            <!-- /.box-body -->
           </div>
-          <!-- /.box -->
-          </div>
-          </div>
+          <!-- /.tab-pane -->
         </div>
-        </div>
-        <!-- /.ROW -->
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+</div>
+</div>
+</div>
+<!-- /.ROW -->
 
-  </section>
-      
+</section>
+
 {% endblock %}
