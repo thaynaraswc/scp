@@ -8,6 +8,7 @@ app_name = 'teste'
 urlpatterns = [
 	url(r'^$', views.users_view, name='users'),
 	url(r'^novo/$', views.novo_view, name='novo'),
+	url(r'^new/(?P<item_id>[0-9]+)$', views.new_view, name='new'),
 	url(r'^lista/$', views.lista_view, name='lista'),
 	url(r'^itens/$', views.itens_view, name='itens'),
 	url(r'^(?P<registro_id>[0-9]+)/alterar/$', views.registro_alterar, name='alterar'),

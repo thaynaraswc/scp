@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<form action="" method="post">
+	{% csrf_token %}
+	{{ form_tipo.as_p }}
+	<input type="submit" value="Salvar" />
+</form>
+
+<form action="" method="post">
+	{% csrf_token %}
+	{{ form_movimentacao.as_p }}
+	<input type="submit" value="Salvar" />
+</form>
+
+{% endblock %}

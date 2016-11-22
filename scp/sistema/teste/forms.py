@@ -27,8 +27,7 @@ class RegistroForm(forms.ModelForm):
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
-        fields = ['tipo',
-        'patrimonio',
+        fields = ['patrimonio',
         'origem',
         'descricao',
     ]

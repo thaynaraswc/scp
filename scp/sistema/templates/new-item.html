@@ -30,8 +30,11 @@
                   <label>Tipo</label>
                   <select class="form-control" name="tipo" id="tipo-patrimonio" onchange="changeMarca();">
                     <option value="">Selecione uma área</option>
-                    <option value="computadores">computadores</option>
-                    <option value="impressoras">impressoras</option>
+                    <!-- <option value="computadores">computadores</option>
+                    <option value="impressoras">impressoras</option> -->
+                    {% for tipos in tipo %}
+                    <option value="{{ tipos.nome }}">{{ tipos.nome }}</option>
+                    {% endfor %}
                   </select>
 
                 </div>
@@ -115,6 +118,10 @@
                 </div>
 
               </div>
+              <div class="form-group">
+                      <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
+                      </button>
+                    </div>
             </div>
           
           </form>
@@ -138,8 +145,8 @@
         </div>
 
         <!-- /.box-header -->
-        <div class="box-body">
-          <div class="nav-tabs-custom">
+        <div id="teste-do-teste" class="box-body">
+        <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#itenstipo" data-toggle="tab">Itens</a></li>
               <li><a href="#novotipo-item" data-toggle="tab">Novo</a></li>
@@ -248,6 +255,8 @@
             </div>
             <!-- /.tab-content -->
           </div>
+
+
           <!-- /.box-body -->
         </div>
         <!-- /.box -->
@@ -307,7 +316,7 @@
                       <tbody>
                       {% for itens in item %}
                         <tr>
-                          <td>{{ itens.id }}</td>
+                          <!-- <td>{{ itens.id }}</td> -->
                           <td>{{ itens.tipo }}</td>
                           <td>{{ itens.patrimonio }}</td>
                           <td>{{ itens.origem }}</td>
@@ -315,7 +324,7 @@
                           
                         </tr>
                       {% endfor %}
-                        <tr>
+                        <!-- <tr>
                           <td>002</td>
                           <td>MNTR</td>
                           <td>152463-5</td>
@@ -362,7 +371,7 @@
                           <td>NOTEBOOK</td>
                           <td>DELL i5 8GB 1TB</td>
 
-                        </tr>
+                        </tr> -->
                       </tbody>
 
                     </table>
@@ -448,5 +457,9 @@
 
 
 </section>
+
+<!-- <script type="text/javascript">
+  document.getElementById("teste-do-teste").innerHTML ='<object type="text/html" data="http://www.w3schools.com"</object>';
+</script> -->
 
 {% endblock %}

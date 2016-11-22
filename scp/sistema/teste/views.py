@@ -39,6 +39,7 @@ def users_view(request):
 
 	return render(request, "usuarios.html", context)
 
+
 def novo_view(request):
 
     form = RegistroForm(request.POST or None)
@@ -51,6 +52,8 @@ def novo_view(request):
     context = {
     "form": form,
     }
+
+    print(form)
 
     if form.is_valid():
         print ("nada")
@@ -81,6 +84,40 @@ def lista_view(request):
 
     return render(request, "list.html", context)
 
+
+def new_view(request, item_id):
+
+    form_tipo = TipoForm(request.POST or None)
+    form_movimentacao = MovimentacaoForm(request.POST or None)
+
+    item = get_object_or_404(Item, pk=item_id)
+
+
+    if form_tipo.is_valid():
+        #form.save()
+        tipo = form_tipo.save(commit=False)
+        tipo.item = item
+        #if not instance.full_name:
+        #    instance.full_name = "Justin"
+        tipo.save()
+
+    if form_movimentacao.is_valid():
+        #form.save()
+        movimentacao = form_movimentacao.save(commit=False)
+        movimentacao.item = item
+        #if not instance.full_name:
+        #    instance.full_name = "Justin"
+        movimentacao.save()
+
+    context = {
+    "item": item,
+    "form_tipo": form_tipo,
+    "form_movimentacao": form_movimentacao,
+    }
+
+    return render(request, "new.html", context)
+
+
 def itens_view(request):
 
     form_item = ItemForm(request.POST or None)
@@ -102,19 +139,20 @@ def itens_view(request):
 
     if form_tipo.is_valid():
         #form.save()
-        instance = form_tipo.save(commit=False)
+        tipo = form_tipo.save(commit=False)
         #if not instance.full_name:
         #    instance.full_name = "Justin"
-        instance.save()
+        tipo.save()
 
     if form_movimentacao.is_valid():
         #form.save()
-        instance = form_movimentacao.save(commit=False)
+        movimentacao = form_movimentacao.save(commit=False)
         #if not instance.full_name:
         #    instance.full_name = "Justin"
-        instance.save()
+        movimentacao.save()
 
     item = Item.objects.all()
+    tipo = Tipo.objects.all()
     query = request.GET.get("q")
 
     if query:
@@ -125,13 +163,14 @@ def itens_view(request):
             Q(descricao__icontains=query)
             ).distinct()
 
-    queryset = Registro.objects.all()
+    queryset = Item.objects.all()
 
     # print(str(item.tipo))
 
     context = {
     "queryset": queryset,
     "item": item,
+    "tipo": tipo,
     "form_tipo": form_tipo,
     "form_movimentacao": form_movimentacao,
     }

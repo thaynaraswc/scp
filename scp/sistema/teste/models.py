@@ -40,7 +40,9 @@ class Registro(models.Model):
     def __str__(self):
         return self.nome
 
+
 class Tipo(models.Model):
+    # item = models.ForeignKey(Item, on_delete=models.CASCADE)
     nome = models.CharField(max_length=120, blank=False)
     codigo = models.CharField(max_length=120, blank=True)
     descricao = models.TextField(max_length=300, blank=True)
@@ -48,20 +50,19 @@ class Tipo(models.Model):
     def __str__(self):
         return self.nome
 
-
 class Item(models.Model):
-    # chave do tipo
-    tipo = models.CharField(max_length=120, blank=True)
+    tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE, null=True)
     patrimonio = models.CharField(max_length=120, blank=False)
     origem = models.CharField(max_length=120, blank=True)
     descricao = models.TextField(max_length=300, blank=True)
 
     def __str__(self):
-        return self.tipo
+        return self.patrimonio
 
 
 class Movimentacao(models.Model):
-    tipo = models.CharField(max_length=120, blank=True)
+    tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
+    # tipo = models.CharField(max_length=120, blank=True)
     modelo = models.CharField(max_length=120, blank=False)
     marca = models.CharField(max_length=120, blank=True)
     tombo = models.CharField(max_length=300, blank=True)

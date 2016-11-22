@@ -1,0 +1,109 @@
+<div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#itenstipo" data-toggle="tab">Itens</a></li>
+              <li><a href="#novotipo-item" data-toggle="tab">Novo</a></li>
+              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="itenstipo">
+                <div class="row">
+                  <div class="box-tools">
+                    <div class="input-group input-group-sm" >
+                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Procurar">
+
+                      <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- text input -->
+                  <h4 > Tipos cadastrados </h4>
+                  <div >
+
+                    <table  class="table table-bored table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>CÓD</th>
+                          <th>Nome</th>
+                          <th>Descrição</th>
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>001</td>
+                          <td>IMP1</td>
+                          <td>Impressora</td>
+                          <td>Samsung 3180M</td>
+                        </tr>
+
+                        <tr>
+                          <td>002</td>
+                          <td>MNTR1</td>
+                          <td>Monitor</td>
+                          <td>DELL 21,5"</td>
+                        </tr>
+
+                        <tr>
+                          <td>003</td>
+                          <td>PC1</td>
+                          <td>COMPUTADOR</td>
+                          <td>HP i5 4GB 500HD</td>
+                        </tr>
+
+                        <tr>
+                          <td>004</td>
+                          <td>NTBK1</td>
+                          <td>NOTEBOOK</td>
+                          <td>DELL i5 8GB 1TB</td>
+                        </tr>
+
+                      </tbody>
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="novotipo-item">
+                <div class="row">
+
+                <h4 style="margin-left:15px;"> Cadastrar novo tipo </h4>
+
+                  <form method="post" action="">{% csrf_token %}
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Nome</label>
+                        <input class="form-control" type="text" name="nome" placeholder="Setor de controle Interno" required /> 
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Código</label>
+                        <input class="form-control" type="text" name="codigo" placeholder="ex: SCI" required />
+                      </div>
+
+                    </div>
+                    
+                    <div class="form-group" style="margin:10px;">
+                      <label>Descrição</label>
+                      <textarea class="form-control" rows="3" name="descricao" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
+                      </button>
+                    </div>
+
+                  </form>
+                
+                </div>
+              </div>
+              
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
