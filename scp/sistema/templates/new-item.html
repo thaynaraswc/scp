@@ -174,6 +174,7 @@
                           <th>ID</th>
                           <th>CÓD</th>
                           <th>Nome</th>
+                          <th>Marca</th>
                           <th>Descrição</th>
 
 
@@ -184,28 +185,32 @@
                           <td>001</td>
                           <td>IMP1</td>
                           <td>Impressora</td>
-                          <td>Samsung 3180M</td>
+                          <td>Samsung</td>
+                          <td>3180M</td>
                         </tr>
 
                         <tr>
                           <td>002</td>
                           <td>MNTR1</td>
                           <td>Monitor</td>
-                          <td>DELL 21,5"</td>
+                          <td>DELL</td>
+                          <td>21,5"</td>
                         </tr>
 
                         <tr>
                           <td>003</td>
                           <td>PC1</td>
                           <td>COMPUTADOR</td>
-                          <td>HP i5 4GB 500HD</td>
+                          <td>HP</td>
+                          <td>i5 4GB 500HD</td>
                         </tr>
 
                         <tr>
                           <td>004</td>
                           <td>NTBK1</td>
                           <td>NOTEBOOK</td>
-                          <td>DELL i5 8GB 1TB</td>
+                          <td>DELL</td>
+                          <td>i5 8GB 1TB</td>
                         </tr>
 
                       </tbody>
@@ -235,10 +240,18 @@
                       </div>
 
                     </div>
-                    
+                    <div class="col-md-6">
                     <div class="form-group" style="margin:10px;">
                       <label>Descrição</label>
                       <textarea class="form-control" rows="3" name="descricao" placeholder="Descreva as atribuições de quem pertence a esse grupo" required></textarea>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>MARCA</label>
+                        <input class="form-control" type="text" name="marca" placeholder="ex: samsung" required />
+                      </div>
+
                     </div>
 
                     <div class="form-group">
@@ -402,27 +415,32 @@
                       </div>
                     </div>
                     <div class="col-md-6">
+                      
+                      <div class="form-group">
+                        <label>Descrição</label>
+
+                        <select class="form-control" name="origem" required>
+                          <option value="FORUM">Samsung 3180M</option>
+                          <option value="SEC-SEG">HP i5 4GB 500HD</option>
+                          <option value="LOCAL-3">  DELL i5 8GB 1TB</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Origem</label>
+                        <input class="form-control" type="text" name="nome" placeholder="Proprietário oficial do item." required /> 
+                      </div>
+                    </div>
+                    
+                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Patrimônio</label>
                         <input class="form-control" type="text" name="patrimonio" placeholder="ex: 152872-9" required />
                       </div>
 
                     </div>
-
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label>ORIGEM</label>
-
-                        <select class="form-control" name="origem" required>
-                          <option value="FORUM">FORUM</option>
-                          <option value="SEC-SEG">SECRETARIA DE SEGURANÇA</option>
-                          <option value="LOCAL-3">LOCAL 3</option>
-                          <option value="LOCAL-4">LOCAL 4</option>
-                        </select>
-                      </div>
-                    </div>
-                    
-                    <div class="col-md-6"></div>
                     
                     <div class="form-group">
                       <button class="btn btn-success pull-right" style=" margin-right: 30px; margin-top: 25px; " type="submit">Salvar
