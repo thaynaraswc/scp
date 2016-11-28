@@ -1,12 +1,13 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Registro, Tipo, Movimentacao, Item
+from .models import Registro, Tipo, Movimentacao, Item, Tarefas
 
 class RegistroForm(forms.ModelForm):
     class Meta:
         model = Registro
-        fields = ['nome',
+        fields = ['user',
+        'nome',
         'cpf',
         'dataN',
         'cidade',
@@ -14,7 +15,7 @@ class RegistroForm(forms.ModelForm):
         'bairro',
         'telefone',
         'whatsapp',
-        'adress',
+        'endereco',
         'cep',
         'complemento',
         'lotado',
@@ -27,9 +28,9 @@ class RegistroForm(forms.ModelForm):
 class ItemForm(forms.ModelForm):
     class Meta:
         model = Item
-        fields = ['patrimonio',
+        fields = ['tipo',
+        'patrimonio',
         'origem',
-        'descricao',
     ]
 
 class TipoForm(forms.ModelForm):
@@ -44,7 +45,7 @@ class TipoForm(forms.ModelForm):
 class MovimentacaoForm(forms.ModelForm):
     class Meta:
         model = Movimentacao
-        fields = ['tipo',
+        fields = ['item',
         'modelo',
         'marca',
         'tombo',
@@ -54,6 +55,11 @@ class MovimentacaoForm(forms.ModelForm):
         'local',
     ]
 
+class TarefasForm(forms.ModelForm):
+    class Meta:
+        model = Tarefas
+        fields = ['tarefa',
+    ]
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)

@@ -85,6 +85,28 @@
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="todo-list">
+
+                {% for tarefa in tarefas %}
+
+                <li>
+                  <!-- drag handle -->
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <!-- checkbox -->
+                  <input type="checkbox" value="">
+                  <!-- todo text -->
+                  <span class="text">{{ tarefa.tarefa }}</span>
+                  <!-- Emphasis label -->
+                  <!-- General tools such as edit or delete-->
+                  <div class="tools">
+                    <a class="fa fa-trash-o" href="{% url 'teste:excluir-tarefa' tarefa.id %}" ></a>
+                  </div>
+                </li>
+
+                {% endfor %}
+
                 <li>
                   <!-- drag handle -->
                       <span class="handle">
@@ -166,7 +188,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Nova tarefa</button>
+              <button onclick="window.location.assign('{% url 'teste:novo-tarefa' %}')" type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Nova tarefa</button>
             </div>
           </div>
           </div>
