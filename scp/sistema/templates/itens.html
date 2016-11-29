@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="content">
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <h4>Busque itens a partir de qualquer dado fornecido no cadastro</h4>
+        <div class="col-md-8">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Pesquisar ...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span>
+          </div><!-- /input-group -->
+          </div>
+        </div>
+      
+      </div>
+
+
+<div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Itens cadastrados</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+            <div>
+              <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Usuário</th>
+                  <th>Nome</th>
+                  <th>Nº Funcional</th>
+                  <th>CPF</th>
+                  <th>Grupo</th>
+                  <th>Função</th>
+                  <th>Email</th>
+                  <th>Situação</th>
+                  </tr>
+              </thead>
+              <tbody>  
+                <tr>
+                  <td>emilia.aguiar</td>
+                  <td><a href="#">Emília Aguiar</a></td>
+                  <td>1254258-9</td>
+                  <td>254.365.956-95</td>
+                  <td>Diretoria</td>
+                  <td>Fiscal</td>
+                  <td>fiscal@mail.com.br</td>
+                  <td><span class="label label-success">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>raimundo.nonato</td>
+                  <td><a href="#">Raimundo</a></td>
+                  <td>1254258-9</td>
+                  <td>254.365.956-95</td>
+                  <td>Diretoria</td>
+                  <td>Fiscal</td>
+                  <td>fiscal@mail.com.br</td>
+                  <td><span class="label label-danger">Inativo</span></td>
+                </tr>
+                <tr>
+                  <td>josé.silva</td>
+                  <td><a href="#">José Silva</a></td>
+                  <td>1254258-9</td>
+                  <td>254.365.956-95</td>
+                  <td>Diretoria</td>
+                  <td>Fiscal</td>
+                  <td>fiscal@mail.com.br</td>
+                  <td><span class="label label-success">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>maria.aguiar</td>
+                  <td><a href="#">Maria Aguiar</a></td>
+                  <td>1254258-9</td>
+                  <td>254.365.956-95</td>
+                  <td>Diretoria</td>
+                  <td>Fiscal</td>
+                  <td>fiscal@mail.com.br</td>
+                  <td><span class="label label-danger">Inativo</span></td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+    </div>
+    </div>
+  </div>
+
+{% endblock %}
