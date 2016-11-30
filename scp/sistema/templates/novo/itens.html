@@ -37,22 +37,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
-  <style>
-    .example-modal .modal {
-      position: relative;
-      top: auto;
-      bottom: auto;
-      right: auto;
-      left: auto;
-      display: block;
-      z-index: 1;
-    }
-
-    .example-modal .modal {
-      background: transparent !important;
-    }
-    </style>
 </head>
 <body class="hold-transition skin-black sidebar-mini">
 <div class="wrapper">
@@ -181,18 +165,6 @@
             <li><a href="new-item.html"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
           </ul>
         </li>
-        <li class=" treeview">
-          <a href="itens.html">
-            <i class="fa fa-file-pdf-o"></i> <span>Relatórios</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="itens.html"><i class="fa fa-circle-o"></i>Geral</a></li>
-            <li><a href="new-item.html"><i class="fa fa-circle-o"></i>Personalizado</a></li>
-          </ul>
-        </li>
 
     </section>
     <!-- /.sidebar -->
@@ -203,7 +175,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Painel de controle SCA
+       Lista de Usuários
         <small>Sistemas 2DEV</small>
       </h1>
       <ol class="breadcrumb">
@@ -212,229 +184,98 @@
       </ol>
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-            <h3>152</h3>
-
-              <p>Patrimônio</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-list-alt" aria-hidden="true""></i>
-            </div>
-            <a href="itens.html" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
+    <!- inicio meio da pag -->
+    <!--inicio painel de busca -->
+  <div class="content">
+    <div class="panel panel-default">
+      <div class="panel-body">
+      <h4>Busque itens a partir de qualquer dado fornecido no cadastro</h4>
+        <div class="col-md-8">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Pesquisar ...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span>
+          </div><!-- /input-group -->
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Últimos cadastros</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">Ver Mais <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>Usuários cadastrados</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="usuarios.html" class="small-box-footer">Ver mais  <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>+</h3>
-
-              <p>Relatórios</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">Ver mais <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+      
       </div>
-      <!-- /.row -->
-          <!-- TO DO List -->
-          <div class="row">
-          <div class="col-md-6">
-          <div class="box box-primary">
-            <div class="box-header">
-              <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Tarefas</h3>
+
+<div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Itens Cadastrados</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <ul class="todo-list">
-                <li>
-                  <!-- drag handle -->
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <!-- checkbox -->
-                  <input type="checkbox" value="">
-                  <!-- todo text -->
-                  <span class="text">Backup local X</span>
-                  <!-- Emphasis label -->
-                  <!-- General tools such as edit or delete-->
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Manutenção impressora X</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Configuração X </span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Despacho nº 12510</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Reunião 18:15</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Minutar sentença</span>
-                  <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>
-                </li>
-              </ul>
+            <div>
+              <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Patrimônio</th>
+                  <th>Situação</th>
+                  <th>Servidor</th>
+                  <th>Proprietário</th>
+                  <th>Local</th>
+                  </tr>
+              </thead>
+              <tbody>  
+                <tr>
+                  <td>Computador</td>
+                  <td>DELL</td>
+                  <td>I3 4GB HD500</td>
+                  <td>12453-9</td>
+                  <td>Em uso</td>
+                  <td>Emilia</td>
+                  <td>UFT Gurupi</td>
+                  <td>REITORIA</td>
+                </tr>
+                <tr>
+                  <td>Computador</td>
+                  <td>HP</td>
+                  <td>I7 4GB HD500</td>
+                  <td>124585-9</td>
+                  <td>Em uso</td>
+                  <td>Raimundo</td>
+                  <td>UFT Palmas</td>
+                  <td>bloco 3- labin 11</td>
+                </tr>
+                <tr>
+                  <td>Impressora</td>
+                  <td>Samsung</td>
+                  <td>ML-5030</td>
+                  <td>12458-3</td>
+                  <td>Em uso</td>
+                  <td>Jose</td>
+                  <td>UFT Ṕalmas</td>
+                  <td>SALA 5-BALA I</td>
+                </tr>
+
+              </tbody>
+              </table>
+            </div>
             </div>
             <!-- /.box-body -->
-            <div class="box-footer clearfix no-border">
-            <input style="padding-top: 5px;" type="text" class="form-control" name="novatarefa" placeholder="Digite aqui sua nova tarefa ..." for="novatarefa">
-              <button style="margin-top: 5px;" type="button" class="btn btn-success pull-right">
-  <i class="fa fa-plus"></i> Nova tarefa</button>
-<!-- Modal -->
-
-
-          </div>
-          </div>
-          </div>
-         
-          <!-- /.box -->
-          
-          <!-- Calendar -->
-         
-          <div class="col-md-6">
-          <div class="box box-solid bg-green-gradient">
-            <div class="box-header">
-              <i class="fa fa-calendar"></i>
-
-              <h3 class="box-title">Calendar</h3>
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <!-- button with a dropdown -->
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bars"></i></button>
-                  <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="#">Add new event</a></li>
-                    <li><a href="#">Clear events</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View calendar</a></li>
-                  </ul>
-                </div>
-                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                </button>
-              </div>
-              <!-- /. tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <!--The calendar -->
-              <div id="calendar" style="width: 100%"></div>
-            </div>
-            <!-- /.box-body -->
-            </div>
-            
-            
-              <!-- /.row -->
-            </div>
           </div>
           <!-- /.box -->
 
-        </section>
-        <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
-
-    </section>
-    <!-- /.content -->
+    </div>
+    </div>
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  </div>
+
+
+
+
+
+
+<footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Versão</b> 1.9
     </div>
@@ -485,40 +326,8 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script>
-// Get the modal
-var modal = document.getElementById('novoModal');
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
 
-// Get the button that opens the modal
-var btn = document.getElementById("btnabrirnovo");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 </body>
 </html>
-<script type="text/javascript">
-  function abreFecha(sel) {
-  $(sel).slideToggle();
-}
-#tarefa {
-  display: none;
-}
-</script>
+
