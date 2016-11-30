@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+
+{% block content %} 
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+     <div class="box box-primary x box-solid">
+      <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de Usuário</h3>
+
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+        </div>
+        <!-- /.box-tools -->
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <div class="nav-tabs-custom">
+          <form method="post" action="">{% csrf_token %}
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
+                <!-- <form method="post" action="">{% csrf_token %} -->
+
+                <div class="row">
+                  <!-- text input -->
+                  <h3 style="margin-left:15px;"> Informações gerais </h3>
+                  <div class="col-md-6">
+
+                    <div class="form-group">
+                      <label for="id_user">Usuário</label>
+                      <select class="form-control" id="id_user" name="user" value="{{ form_registro.user.value }}">
+                        <option value="" selected="Selecione o user"></option>
+                        <option value="1">raimundo</option>
+                        <option value="3">thaynara</option>
+                        <option>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_nome">Nome</label>
+                          <input type="text" id="id_nome" class="form-control" name="nome" value="{{ form_registro.nome.value }}" placeholder="Digite o nome"/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_cpf">CPF</label>
+                          <input class="form-control" id="cpf" name="cpf" placeholder="Número de CPF" value="{{ form_registro.cpf.value }}" required/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_cidade">Cidade</label>
+                          <input type="text" class="form-control" name="cidade" value="{{ form_registro.cidade.value }}" placeholder="Cidade de origem do colaborador" required />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_bairro">Bairro</label>
+                          <input class="form-control" name="bairro" value="{{ form_registro.bairro.value }}" placeholder="Ex: Centro" required/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_cep">CEP</label>
+                          <input class="form-control" id="id_cep" name="cep" value="{{ form_registro.cep.value }}" required/>
+                        </div> 
+
+                        <div class="form-group">
+                          <label for="id_lotado">Lotado</label>
+                          <input class="form-control" name="lotado" value="{{ form_registro.lotado.value }}" placeholder="Ex: Filial Palmas" required/>
+                        </div>   
+
+
+                      </div>
+
+
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="id_lotado">Data de Nascimento</label>
+
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="date" class="form-control" name="dataN" id="id_dataN" class="datas" value="{{ form_registro.dataN.value }}" size="20" maxlength="10" maxlengt="8" />
+                          </div>
+                          <!-- /.input group -->
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_estado">Estado</label>
+
+                          <select class="form-control" id="id_estado" name="estado" value="{{ form_registro.estado.value }}" >
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                          </select>
+
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_endereco">Endereço</label>
+                          <input class="form-control" name="endereco" value="{{ form_registro.endereco.value }}" placeholder="Ex: Rua A, nº 15" required/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_complemento">Complemento</label>
+                          <input class="form-control" name="complemento" value="{{ form_registro.complemento.value }}" placeholder="Ex: Partão branco" required/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_setor">Setor</label>
+                          <input class="form-control" name="setor" value="{{ form_registro.setor.value }}" placeholder="Ex: Diretoria" required/>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="id_cargo">Cargo</label>
+                          <input class="form-control" name="cargo" value="{{ form_registro.cargo.value }}" placeholder="Ex: Fiscal 1" required/>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  
+                </form>
+                <!-- /.tab-pane -->
+
+                <div class="row">
+
+                  <h3 style="margin-left:15px;"> Informações de contato </h3>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="id_telefone">Telefone</label>
+                      <input class="form-control" id="telefone" name="telefone" value="{{ form_registro.telefone.value }}" placeholder="( )_ ____-____" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="id_whatsapp">WhatsApp</label>
+                      <input class="form-control" id="whatsapp" name="whatsapp" value="{{ form_registro.whatsapp.value }}" placeholder="( )_ ____-____" required/>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="id_email">Email</label>
+                      <input type="email" name="email" class="form-control" value="{{ form_registro.email.value }}" placeholder="contato@mail.com" required/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  </div>
+                </div>
+
+                <button style ="margin: 10px;" class="btn btn-lg btn-success pull-right" type="submit">Salvar
+                </button>
+
+              </div>
+            </form>
+            <!-- /.tab-pane -->
+
+            <div class="row"  >
+              <form method="get" action="new-user-cad.html">
+               <button class="btn btn-lg btn-danger pull pull-right" style="margin-right:30px;" type="submit">Criar login e senha</button>
+           </div>
+
+         </div>
+
+         <!-- </form> -->
+
+       </div>
+            <!-- <button class="btn btn-success pull-right" type="submit">Salvar
+          </button> -->
+          <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+  <!-- /.box -->
+
+
+  <!-- /col -->
+</div>
+</div>
+</div>
+<!-- /.ROW -->
+
+</section>
+
+{% endblock %}

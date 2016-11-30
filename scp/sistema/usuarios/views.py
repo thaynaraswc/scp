@@ -17,11 +17,13 @@ def users_view(request):
 	
 	queryset = Registro.objects.all()
         tarefas = Tarefas.objects.all()
+        itens = Item.objects.all()
 
 	context = {
 	"queryset": queryset,
 	"form": form,
     "tarefas": tarefas,
+    "itens": itens,
 	}
 
 	if form.is_valid():
@@ -38,50 +40,49 @@ def novo_registro_view(request):
 
     form = RegistroForm(request.POST or None)
 
-    form_user = UserForm(request.POST or None)
-    
-    print(form_user)
+    form_user = User.objects.all()
 
-    if form_user.is_valid():
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
 
-        user = form_user.save(commit=False)
-        username = form_user.cleaned_data['username']
-        password = form_user.cleaned_data['password']
-        user.set_password(password)
-        user.save()
-        user = authenticate(username=username, password=password)
-
-        updated_data = request.POST.copy()
-        updated_data.update({'user': user}) 
-        form = RegistroForm(data=updated_data) 
-
-        if form.is_valid():
-            print("Entrou")
-            instance = form.save(commit=False)
-            instance.save()
-
-        # if user is not None:
-        #     if user.is_active:
-        #         login(request, user)
-        #         registro = Registro.objects.filter(user=request.user)
-        #         queryset = Registro.objects.all()
-        #         context = {
-        #             "registro": registro,
-        #             "queryset":queryset,
-        #         }
-        #         return render(request, 'login.html', )
+    # if user is not None:
+    #     if user.is_active:
+    #         login(request, user)
+    #         registro = Registro.objects.filter(user=request.user)
+    #         queryset = Registro.objects.all()
+    #         context = {
+    #             "registro": registro,
+    #             "queryset":queryset,
+    #         }
+    #         return render(request, 'login.html', )
 
     context = {
     "form": form,
-    "form_user": form_user,
+    "user": form_user,
     }
     
     return render(request, "new-user.html", context)
 
 
+def inicio_view(request):
+
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return redirect("usuarios:users")
+
+    return render(request, "inicio.html")
+
+
 def lista_view(request):
 
     form = RegistroForm(request.POST or None)
+
     #if request.user.is_authenticated():
     #    title = "My title %s" %(request.user)
 
@@ -89,6 +90,19 @@ def lista_view(request):
     #    print request.POST
 
     queryset = Registro.objects.all()
+    print(queryset)
+
+    query_registro = Registro.objects.all()
+    query = request.GET.get("q")
+
+    if query:
+        query_registro = query_registro.filter(
+            Q(user__username__icontains=query) |
+            Q(nome__icontains=query) |
+            Q(patrimonio__icontains=query) |
+            Q(cpf__icontains=query) |
+            Q(email__icontains=query) 
+            ).distinct()
 
     context = {
     "queryset": queryset,
@@ -96,6 +110,7 @@ def lista_view(request):
     }
 
     return render(request, "list.html", context)
+
 
 def novo_tarefa_view(request):
     
@@ -112,7 +127,7 @@ def novo_tarefa_view(request):
         # "form": form,
         # }
 
-        return redirect("teste:users")
+        return redirect("usuarios:users")
 
     context = {
     "form": form,
@@ -172,6 +187,27 @@ def novo_movimentacao_view(request):
         instance.save()
 
     return render(request, "novo-movimentacao.html", context)
+
+
+def editar_registro_view(request, id=None):
+
+    registro = get_object_or_404(Registro, id=id)
+    form_registro = RegistroForm(request.POST or None, instance=registro)
+
+    # print(form_registro)
+
+    if form_registro.is_valid():
+        print('entrou')
+        registro = form_registro.save(commit=False)
+        registro.save()
+
+
+    context = {
+    "registro": registro,
+    "form_registro": form_registro,
+    }
+
+    return render(request, "editar-registro.html", context)
 
 
 def editar_movimentacao_view(request, id=None):
@@ -237,21 +273,21 @@ def excluir_item_view(request, id=None):
     item = get_object_or_404(Item, id=id)
     item.delete()
 
-    return redirect("teste:itens")
+    return redirect("usuarios:itens")
 
 
 def excluir_tipo_view(request, id=None):
     tipo = get_object_or_404(Tipo, id=id)
     tipo.delete()
 
-    return redirect("teste:itens")
+    return redirect("usuarios:itens")
 
 
 def excluir_movimentacao_view(request, id=None):
     item = get_object_or_404(Movimentacao, id=id)
     item.delete()
 
-    return redirect("teste:itens")
+    return redirect("usuarios:itens")
 
 def excluir_tarefa_view(request, id=None):
     tarefa = get_object_or_404(Tarefas, id=id)
@@ -263,7 +299,7 @@ def excluir_tarefa_view(request, id=None):
     "tarefas":tarefas,
     }
 
-    return redirect("teste:users")
+    return redirect("usuarios:users")
     # return render(request, "usuarios.html", context)
 
 
@@ -333,14 +369,24 @@ def itens_view(request):
         movimentacao.save()
 
     query_item = Item.objects.all()
+    query_tipo = Tipo.objects.all()
     query = request.GET.get("q")
+    query2 = request.GET.get("p")
 
     if query:
         query_item = query_item.filter(
+            Q(id__icontains=query) |
             Q(tipo__nome__icontains=query) |
             Q(patrimonio__icontains=query) |
             Q(origem__icontains=query) |
-            Q(descricao__icontains=query)
+            Q(tipo__descricao__icontains=query)
+            ).distinct()
+        
+    if query2:
+        query_tipo = query_tipo.filter(
+            Q(nome__icontains=query2) |
+            Q(codigo__icontains=query2) |
+            Q(descricao__icontains=query2) 
             ).distinct()
 
     
@@ -349,7 +395,7 @@ def itens_view(request):
 
     context = {
     "item": query_item,
-    "tipos": tipos,
+    "tipos": query_tipo,
     "form_tipo": form_tipo,
     "form_movimentacao": form_movimentacao,
     }
@@ -382,10 +428,7 @@ def registro_deletar(request, registro_id):
 def logout_view(request):
     logout(request)
     form = UserForm(request.POST or None)
-    context = {
-        "form": form,
-    }
-    return redirect("teste:login")
+    return redirect("usuarios:login")
 
 
 def login_view(request):
@@ -407,26 +450,22 @@ def login_view(request):
 
 
 def registro_view(request):
-    form = UserForm(request.POST or None)
-    print(form)
-    if form.is_valid():
-        user = form.save(commit=False)
-        username = form.cleaned_data['username']
-        password = form.cleaned_data['password']
+    
+    form_user = UserForm(request.POST or None)
+    
+
+    if form_user.is_valid():
+
+        user = form_user.save(commit=False)
+        username = form_user.cleaned_data['username']
+        password = form_user.cleaned_data['password']
         user.set_password(password)
         user.save()
         user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                registro = Registro.objects.filter(user=request.user)
-                queryset = Registro.objects.all()
-                context = {
-                    "registro": registro,
-                    "queryset":queryset,
-                }
-                return render(request, 'usuarios.html', )
+        return redirect("usuarios:novo-registro")
+    
     context = {
-        "form": form,
+        "form": form_user,
     }
-    return render(request, 'register.html', context)
+    
+    return render(request, 'novo-registro.html', context)

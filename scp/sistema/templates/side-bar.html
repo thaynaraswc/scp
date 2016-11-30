@@ -28,20 +28,20 @@
       <ul class="sidebar-menu">
         <li class="header">SCA - SISTEMAS 2DEV</li>
         <li>
-          <a href="{% url 'teste:users' %}">
+          <a href="{% url 'usuarios:users' %}">
             <i class="fa fa-dashboard"></i> <span>Painel</span>
           </a>
         </li>
         <li class=" treeview">
-          <a href="teste:users">
+          <a href="usuarios:users">
             <i class="fa fa-users"></i> <span>Usuários</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{% url 'teste:lista' %}"><i class="fa fa-circle-o"></i>Ver todos</a></li>
-            <li><a href="{% url 'teste:novo-registro' %}"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
+            <li class="active"><a href="{% url 'usuarios:lista' %}"><i class="fa fa-circle-o"></i>Ver todos</a></li>
+            <li><a href="{% url 'usuarios:novo-registro' %}"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
           </ul>
         </li>
 
@@ -53,8 +53,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{% url 'teste:itens' %}"><i class="fa fa-circle-o"></i>Ver todos</a></li>
-            <li><a href="{% url 'teste:itens' %}"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
+            <li class="active"><a href="{% url 'usuarios:itens' %}"><i class="fa fa-circle-o"></i>Ver todos</a></li>
+            <li><a href="{% url 'usuarios:itens' %}"><i class="fa fa-circle-o"></i>Adicionar novo</a></li>
           </ul>
         </li>
 
@@ -66,7 +66,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-         <li class="active"><a href="{% url 'teste:itens' %}"><i class="fa fa-circle-o"></i>Geral</a></li>
+         <li class="active"><a href="{% url 'usuarios:itens' %}"><i class="fa fa-circle-o"></i>Geral</a></li>
          <li><a href="new-item.html"><i class="fa fa-circle-o"></i>Personalizado</a></li>
        </ul>
      </li>

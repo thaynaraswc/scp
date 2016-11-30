@@ -9,7 +9,7 @@
       <h4>Busque usuários a partir de qualquer dado fornecido no cadastro</h4>
         <div class="col-md-8">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Pesquisar ...">
+            <input type="text" class="form-control" name="q" placeholder="Pesquisar ..." value="{{ request.GET.q }}">
             <span class="input-group-btn">
               <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
             </span>
@@ -42,7 +42,21 @@
                   <th>Situação</th>
                   </tr>
               </thead>
-              <tbody>  
+              <tbody>
+                {% for user in queryset %}
+                <tr>
+                  <!-- <td>{{ itens.id }}</td> -->
+                  <td>{{ user.user.username }}</td>
+                  <td><a href="{% url 'usuarios:editar-registro' user.id %}" >{{ user.nome }}</td>
+                  <td></td>
+                  <td>{{ user.cpf }}</td>
+                  <td></td>
+                  <td></td>
+                  <td>{{ user.email }}</td>
+                  <td><span class="label label-success">Ativo</span></td>
+
+                </tr>
+                {% endfor %}  
                 <tr>
                   <td>emilia.aguiar</td>
                   <td><a href="#">Emília Aguiar</a></td>

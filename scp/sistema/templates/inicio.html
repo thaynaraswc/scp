@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,15 +13,16 @@
 
     <title>Início - Sistema</title>
 
-  <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     -->
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="bootstrap/css/jumbotron.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/jumbotron.css' %}">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -46,12 +49,12 @@
           <a class="navbar-brand" href="#">SCP</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
+          <form method="POST" action="" class="navbar-form navbar-right">{% csrf_token %}
             <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
+              <input type="text" placeholder="Username" name="username" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Senha" class="form-control">
+              <input type="password" placeholder="Senha" name="password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Entrar</button>
             <a role="button" href="cadastro_out.html" class="btn btn-default">Cadastrar</a>
@@ -102,9 +105,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
 </body>
