@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     -->
 
@@ -57,7 +57,7 @@
               <input type="password" placeholder="Senha" name="password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Entrar</button>
-            <a role="button" href="cadastro_out.html" class="btn btn-default">Cadastrar</a>
+            <a role="button" href="{% url 'usuarios:erro' %}" class="btn btn-default">Cadastrar</a>
           </form>
         </div><!--/.navbar-collapse -->
       </div>

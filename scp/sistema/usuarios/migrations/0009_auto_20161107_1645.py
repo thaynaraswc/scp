@@ -9,7 +9,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('teste', '0008_auto_20160928_1230'),
+        ('usuarios', '0008_auto_20160928_1230'),
     ]
 
     operations = [
@@ -27,6 +27,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='grupo',
             name='registro',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='teste.Registro'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='usuarios.Registro'),
         ),
     ]

@@ -1,11 +1,11 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Registro, Tipo, Movimentacao, Item, Tarefas
+from .models import Cadastro, Tarefas
 
-class RegistroForm(forms.ModelForm):
+class CadastroForm(forms.ModelForm):
     class Meta:
-        model = Registro
+        model = Cadastro
         fields = ['user',
         'nome',
         'cpf',
@@ -22,37 +22,7 @@ class RegistroForm(forms.ModelForm):
         'cargo',
         'setor',
         'email',
-    ]
-
-
-class ItemForm(forms.ModelForm):
-    class Meta:
-        model = Item
-        fields = ['tipo',
-        'patrimonio',
-        'origem',
-    ]
-
-class TipoForm(forms.ModelForm):
-    class Meta:
-        model = Tipo
-        fields = ['nome',
-        'codigo',
-        'descricao',
-    ]
-
-
-class MovimentacaoForm(forms.ModelForm):
-    class Meta:
-        model = Movimentacao
-        fields = ['item',
-        'modelo',
-        'marca',
-        'tombo',
-        'situacao',
-        'servidor',
-        'proprietario',
-        'local',
+        'nfuncional',
     ]
 
 class TarefasForm(forms.ModelForm):

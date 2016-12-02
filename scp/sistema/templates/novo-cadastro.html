@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="content">
+
+	<div class="row">
+		<div class="col-md-9">
+			<div class="box box-primary x box-solid">
+				<div class="box-header with-border">
+					<h3 class="box-title">Cadastro de Usuário</h3>
+
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+						</button>
+					</div>
+					<!-- /.box-tools -->
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<form method="post" action="">{% csrf_token %}
+						<div class="row">
+							<h3 class="text-center" style="margin-left:15px;"> Informações de acesso</h3>
+
+							<div class="col-md-offset-3 col-md-6">
+								<div class="form-group">
+									<label>Nome de usuário</label>
+									<input type="text" class="form-control" name="username" placeholder="usuário para login" required/>
+								</div>
+
+								<div class="form-group">
+									<label>Senha</label>
+									<input type="password" class="form-control" name="password" placeholder="senha para usuário" required/>
+								</div>
+							</div>
+							<!-- <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Código</label>
+                      <input type="text" class="form-control" placeholder="Nº de registro funcional" required/>
+                  </div> -->
+
+						</div>
+						<button class="btn btn-success pull-right" type="submit">Salvar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- /.tab-pane -->
+	</div>
+	<!-- /.tab-content -->
+
+
+</section>
+
+{% endblock %}

@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 #         return self.nome
 
 
-class Registro(models.Model):
+class Cadastro(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     nome = models.CharField(max_length=120, blank=True)
     cpf = models.CharField(max_length=15, blank=True)
@@ -31,50 +31,18 @@ class Registro(models.Model):
     telefone = models.CharField(max_length=15, blank=True)
     whatsapp = models.CharField(max_length=15, blank=True)
     email = models.EmailField(blank=True)
+    nfuncional = models.CharField(max_length=15, blank=True)
     # grupo = models.CharField(max_length=26, blank=True)
     # codigo = models.IntegerField()
     # publish = models.DateField(auto_now=False, auto_now_add=False)
     # updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     # timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
-    
+
     def __unicode__(self):
         return self.nome
 
     def __str__(self):
         return self.nome
-
-
-class Tipo(models.Model):
-    # item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    nome = models.CharField(max_length=120, blank=False)
-    codigo = models.CharField(max_length=120, blank=True)
-    descricao = models.TextField(max_length=300, blank=True)
-
-    def __str__(self):
-        return self.nome
-
-class Item(models.Model):
-    tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE, null=True)
-    patrimonio = models.CharField(max_length=120, blank=False)
-    origem = models.CharField(max_length=120, blank=True)
-
-    def __str__(self):
-        return self.patrimonio
-
-
-class Movimentacao(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, null=True)
-    # tipo = models.CharField(max_length=120, blank=True)
-    modelo = models.CharField(max_length=120, blank=False)
-    marca = models.CharField(max_length=120, blank=True)
-    tombo = models.CharField(max_length=300, blank=True)
-    situacao = models.CharField(max_length=120, blank=True)
-    servidor = models.CharField(max_length=120, blank=True)
-    proprietario = models.CharField(max_length=120, blank=True)
-    local = models.CharField(max_length=300, blank=True)
-
-    def __str__(self):
-        return self.tipo
 
 
 class Tarefas(models.Model):

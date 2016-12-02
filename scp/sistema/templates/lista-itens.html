@@ -1,0 +1,88 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="content">
+  <div class="panel panel-default">
+    <div class="panel-body">
+    <h4>Busque itens a partir de qualquer dado fornecido no cadastro</h4>
+      <div class="col-md-8">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Pesquisar ...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div><!-- /input-group -->
+        </div>
+      </div>
+
+    </div>
+
+
+<div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Itens Cadastrados</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+          <div>
+            <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Patrimônio</th>
+                <th>Situação</th>
+                <th>Servidor</th>
+                <th>Proprietário</th>
+                <th>Local</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Computador</td>
+                <td>DELL</td>
+                <td>I3 4GB HD500</td>
+                <td>12453-9</td>
+                <td>Em uso</td>
+                <td>Emilia</td>
+                <td>UFT Gurupi</td>
+                <td>REITORIA</td>
+              </tr>
+              <tr>
+                <td>Computador</td>
+                <td>HP</td>
+                <td>I7 4GB HD500</td>
+                <td>124585-9</td>
+                <td>Em uso</td>
+                <td>Raimundo</td>
+                <td>UFT Palmas</td>
+                <td>bloco 3- labin 11</td>
+              </tr>
+              <tr>
+                <td>Impressora</td>
+                <td>Samsung</td>
+                <td>ML-5030</td>
+                <td>12458-3</td>
+                <td>Em uso</td>
+                <td>Jose</td>
+                <td>UFT Ṕalmas</td>
+                <td>SALA 5-BALA I</td>
+              </tr>
+
+            </tbody>
+            </table>
+          </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+
+  </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

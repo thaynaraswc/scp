@@ -16,7 +16,7 @@
           </div><!-- /input-group -->
           </div>
         </div>
-      
+
       </div>
 
 
@@ -36,8 +36,8 @@
                   <th>Nome</th>
                   <th>Nº Funcional</th>
                   <th>CPF</th>
-                  <th>Grupo</th>
-                  <th>Função</th>
+                  <th>Setor</th>
+                  <th>Cargo</th>
                   <th>Email</th>
                   <th>Situação</th>
                   </tr>
@@ -47,56 +47,17 @@
                 <tr>
                   <!-- <td>{{ itens.id }}</td> -->
                   <td>{{ user.user.username }}</td>
-                  <td><a href="{% url 'usuarios:editar-registro' user.id %}" >{{ user.nome }}</td>
+                  <td><a href="{% url 'usuarios:editar-cadastro' user.id %}" >{{ user.nome }}</td>
                   <td></td>
                   <td>{{ user.cpf }}</td>
-                  <td></td>
-                  <td></td>
+                  <td>{{ user.setor }}</td>
+                  <td>{{ user.cargo }}</td>
                   <td>{{ user.email }}</td>
                   <td><span class="label label-success">Ativo</span></td>
 
                 </tr>
-                {% endfor %}  
-                <tr>
-                  <td>emilia.aguiar</td>
-                  <td><a href="#">Emília Aguiar</a></td>
-                  <td>1254258-9</td>
-                  <td>254.365.956-95</td>
-                  <td>Diretoria</td>
-                  <td>Fiscal</td>
-                  <td>fiscal@mail.com.br</td>
-                  <td><span class="label label-success">Ativo</span></td>
-                </tr>
-                <tr>
-                  <td>raimundo.nonato</td>
-                  <td><a href="#">Raimundo</a></td>
-                  <td>1254258-9</td>
-                  <td>254.365.956-95</td>
-                  <td>Diretoria</td>
-                  <td>Fiscal</td>
-                  <td>fiscal@mail.com.br</td>
-                  <td><span class="label label-danger">Inativo</span></td>
-                </tr>
-                <tr>
-                  <td>josé.silva</td>
-                  <td><a href="#">José Silva</a></td>
-                  <td>1254258-9</td>
-                  <td>254.365.956-95</td>
-                  <td>Diretoria</td>
-                  <td>Fiscal</td>
-                  <td>fiscal@mail.com.br</td>
-                  <td><span class="label label-success">Ativo</span></td>
-                </tr>
-                <tr>
-                  <td>maria.aguiar</td>
-                  <td><a href="#">Maria Aguiar</a></td>
-                  <td>1254258-9</td>
-                  <td>254.365.956-95</td>
-                  <td>Diretoria</td>
-                  <td>Fiscal</td>
-                  <td>fiscal@mail.com.br</td>
-                  <td><span class="label label-danger">Inativo</span></td>
-                </tr>
+                {% endfor %}
+
               </tbody>
               </table>
             </div>
